@@ -1,7 +1,6 @@
 # GPrimer
 GPrimer: a fast GPU-based pipeline for primerdesign for qPCR experiments
-
-==================================
+======================
 
 # 1. Running
 ## 1.1. Prepare input sequence data
