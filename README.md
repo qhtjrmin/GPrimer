@@ -1,6 +1,8 @@
 # GPrimer
 GPrimer: a fast GPU-based pipeline for primerdesign for qPCR experiments
 
+==================================
+
 # 1. Running
 ## 1.1. Prepare input sequence data
  The mRNA sequence DBs for six species (human, mouse, rat, zebrafish, cow, and pig) from the NCBI Reference Sequence (RefSeq) database (http://www.ncbi.nlm.nih.gov/refseq) were used as input in our experiments. They have NM as the prefix of GenBank accession number. The DBs that we used are in “input_sequence” folder (human and mouse sequence were excluded due to GitHub capacity issues). If users want to take their own sequence as the input, they can use it. The format of input should be ‘sid(\t)sequence’. 
