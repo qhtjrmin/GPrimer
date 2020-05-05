@@ -4,7 +4,7 @@ GPrimer: a fast GPU-based pipeline for primerdesign for qPCR experiments
 
 # 1. Running
 ## 1.1. Prepare input sequence data
- The mRNA sequence DBs for six species (human, mouse, rat, zebrafish, cow, and pig) from the NCBI Reference Sequence (RefSeq) database (http://www.ncbi.nlm.nih.gov/refseq) were used as input in our experiments. They have NM as the prefix of GenBank accession number. The DBs that we used are in “input_sequence” folder (human and mouse sequence were excluded due to GitHub capacity issues). If users want to take their own sequence as the input, they can use it. The format of input should be ‘sid(\t)sequence’. 
+ The input DBs that can be used are in “input_sequence” folder. If you want to take your own sequence as the input, then use it. The format of input should be ‘sid(\t)sequence’. 
  
 - The example of input:
 ```
@@ -28,13 +28,14 @@ GPrimer: a fast GPU-based pipeline for primerdesign for qPCR experiments
   - is_change_parameters_single: whether it changes the paramerters for single filtering (0: no, 1: yes, in default 0)
   - is_change_parameters_pair: whether it changes the parameters for pair filtering (0: no, 1: yes, in defaul 0)
   
- - The example of query:
+- The example of query:
 ```
 ./gprimer –i ./input_sequence/s_scrofa_refseq_181107.txt –o ./inter/output.txt –d ./inter/ 
 ```
 
 ## 1.3. The parameters for filter
- The number of CPU threads and GPUs that users want to exploit can be set. They will be limited by the performance of the machine that used in your experiments. In our experiment, the number of CPU threads exploited was fixed as 20 and the number of GPUs exploited is changed for performance comparison as varying the number of GPUs.
+ The number of CPU threads and GPUs that you want to exploit can be set. They will be limited by the performance of the machine that used in the experiments. 
+ 
 - The example command for using 4 GPUs:
 ```
 ./gprimer –i ./input_sequence/s_scrofa_refseq_181107.txt –o ./inter/output.txt –d ./inter/ -g 4
@@ -59,7 +60,7 @@ The default parameters for single filtering are shown in the below table. It is 
 |Gibbs free energy (∆G, kcal/mol)|>=-9|
 |hairpin|<3-mer|
 
-If users wat to change the parameters, set the option -p1 as 1. Then, they can enter the paramter values that they want.
+If you want to change the parameters, set the option -p1 as 1. Then, you can enter the paramter values that you want.
 
 The example command for setting your own single filtering parameters:
 ```
@@ -77,7 +78,7 @@ The example command for setting your own single filtering parameters:
 |pair-complementarity|<5-mer|
 |3' pair-complementarity|<4-mer|
 
-If users want to change the parameters for pair filtering, set the option –p2 as 1. Then, they can enter the parameter values that they want.
+If you want to change the parameters for pair filtering, set the option –p2 as 1. Then, you can enter the parameter values that you want.
 
 The example command for setting your own single filtering parameters:
 ```
@@ -85,11 +86,11 @@ The example command for setting your own single filtering parameters:
 ```
 
 ## 3. The format of output file
- The final output file is stored in the output path that you set. In GPrimer, the output file is written by CPU threads in Step 5 and thyen it is sorted after being gathered as one file. The format of output file is shown in the below.
+ The final output file is stored in the output path that you set. In GPrimer, the output file is written by CPU threads in Step 5 and then it is sorted after being gathered as one file. The format of output file is shown in the below.
  
- The example of output file:
- ```
- 1   ATTGACGATGCTTGGCGAGA+GTAAGGCCAAGTCAGTCCACT+1+94+238 8.458069801330566
+The example of output file:
+```
+1   ATTGACGATGCTTGGCGAGA+GTAAGGCCAAGTCAGTCCACT+1+94+238 8.458069801330566
 1   ACAGTGAGGTACAGAGAGATGGA+GTAAGGCCAAGTCAGTCCACT+1+56+238  8.513699531555176
 1   TGAGGTACAGAGAGATGGAAGGA+GTAAGGCCAAGTCAGTCCACT+1+60+238  8.522356033325195
 …				…				…
@@ -101,4 +102,4 @@ The example command for setting your own single filtering parameters:
 1011-960    GGAGCTGTCTCGTCTTATGCA+TGGTCATCCCCACAAAAGCT+1011+205+389 7.270344257354736
 ```
 
-The second columns represents ‘f.P+r.P+sid+f.pos+r.pos’. The f.P is forward primer and r.P is reverse primer. The sid means the target sequence id of f.P and r.P. The f.pos and r.pos are the target position of f.P and r.P in the sid. The first column is the common target sidset of the f.P and r.P. The last column represents penalty score of the primer pair (f.P and r.P) and primer pairs with low scores have high rank for the corresponding target sequence. Thus, users can identify top-1 or top-n primer pairs for the target sequences.
+The first column represents common target sidset of the primer pair (forward primer and reverser primer) in second column. The second column represents ‘f.P+r.P+sid+f.pos+r.pos’. The f.P is forward primer and r.P is reverse primer. The sid means the target sequence id of f.P and r.P. The f.pos and r.pos are the target position of f.P and r.P in the sid. The last column represents penalty score of the primer pair (f.P and r.P). Here, primer pairs with low scores have high rank for the corresponding target sequence. Thus, you can identify top-1 or top-n primer pairs for the target sequences.
