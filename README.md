@@ -16,6 +16,7 @@ GPrimer needs the following softwares to be installed in the system:
 
 - CUDA toolkit version 8 or higher.
 - Nvidia driver (v384 or higher)
+- GCC/G++ 5.4.0 or later
 
 
 
