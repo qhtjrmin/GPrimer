@@ -1,9 +1,19 @@
 # GPrimer
 GPrimer: a fast GPU-based pipeline for primerdesign for qPCR experiments
 
+# 1. Get GPrimer
+To get and compline GPrimer, follow the quires that listed below
+- The queries for getting GPrimer are listed as follows :
+```
+$ git clone  https://github.com/qhtjrmin/GPrimer.git
+$ cd src
+$ chmod +x install.sh
+$ ./install.sh
+```
+The source codes are in "src" folder. 
 
-# 1. Running
-## 1.1. Prepare input sequence data
+# 2. Running
+## 2.1. Prepare input sequence data
  The input DBs that can be used are in “input_sequence” folder. If you want to take your own sequence as the input, then use it. The format of input should be ‘sid(\t)sequence’. 
  
 - The example of input:
@@ -13,10 +23,10 @@ GPrimer: a fast GPU-based pipeline for primerdesign for qPCR experiments
 3	GCGGGCACAGTCCGGGAGCCGCTGTCGCCCGGCCAGCCTGAGGCGG…
 ```
 
-## 1.2. Get GPrimer execution file and run
+## 2.2. Get GPrimer execution file and run
 - The query for running GPrimer:
 ```
-./gprimer -i <input_sequence> -o <final_output_path> -d <working_directory> -t <num_of_threads(option)> -g <num_of_gpus(option)> -w <is_write_intermidiate_files(option)> -p1 <is_change_parameters_single(option))> -p2 <is_change_parameters_pair(option)>
+$ ./gprimer -i <input_sequence> -o <final_output_path> -d <working_directory> -t <num_of_threads(option)> -g <num_of_gpus(option)> -w <is_write_intermidiate_files(option)> -p1 <is_change_parameters_single(option))> -p2 <is_change_parameters_pair(option)>
 ```
 - Parameters
   - input_sequence: path of the input sequence file (necessary)
@@ -30,23 +40,23 @@ GPrimer: a fast GPU-based pipeline for primerdesign for qPCR experiments
   
 - The example of query:
 ```
-./gprimer –i ./input_sequence/s_scrofa_refseq_181107.txt –o ./inter/output.txt –d ./inter/ 
+$ ./gprimer –i ./input_sequence/s_scrofa_refseq_181107.txt –o ./inter/output.txt –d ./inter/ 
 ```
 
-## 1.3. The parameters for filter
+## 2.3. The parameters for filter
  The number of CPU threads and GPUs that you want to exploit can be set. They will be limited by the performance of the machine that used in the experiments. 
  
 - The example command for using 4 GPUs:
 ```
-./gprimer –i ./input_sequence/s_scrofa_refseq_181107.txt –o ./inter/output.txt –d ./inter/ -g 4
+$ ./gprimer –i ./input_sequence/s_scrofa_refseq_181107.txt –o ./inter/output.txt –d ./inter/ -g 4
 ```
 - The example command for using 8 GPUs:
 ```
-./gprimer –i ./input_sequence/s_scrofa_refseq_181107.txt –o ./inter/output.txt –d ./inter/ -g 8
+$ ./gprimer –i ./input_sequence/s_scrofa_refseq_181107.txt –o ./inter/output.txt –d ./inter/ -g 8
 ```
 
-# 2. The parameters for filtering in GPrimer
-## 2.1. The parameters for single filtering
+# 3. The parameters for filtering in GPrimer
+## 3.1. The parameters for single filtering
 The default parameters for single filtering are shown in the below table. It is the same with the online default parameters in MRPrimerW2 (http://mrprimerw2.com)
 
 |Parameters|Values|
@@ -64,10 +74,10 @@ If you want to change the parameters, set the option -p1 as 1. Then, you can ent
 
 The example command for setting your own single filtering parameters:
 ```
-./gprimer -i ./input_sequence/s_scrofa_refseq_181107.txt -o ./inter/output.txt -d ./inter/ -p1 1
+$ ./gprimer -i ./input_sequence/s_scrofa_refseq_181107.txt -o ./inter/output.txt -d ./inter/ -p1 1
 ```
 
-## 2.2. The parameters about pair filtering
+## 3.2. The parameters about pair filtering
  The default parameters for pair filtering is shown in the below table. It is the same with the online default parameters in MRPrimerW2 (http://mrprimerw2.com)
  
 |Parameters|Values|
@@ -82,10 +92,10 @@ If you want to change the parameters for pair filtering, set the option –p2 as
 
 The example command for setting your own single filtering parameters:
 ```
-./gprimer -i ./input_sequence/s_scrofa_refseq_181107.txt -o ./inter/output.txt -d ./inter/ -p2 1
+$ ./gprimer -i ./input_sequence/s_scrofa_refseq_181107.txt -o ./inter/output.txt -d ./inter/ -p2 1
 ```
 
-## 3. The format of output file
+## 4. The format of output file
  The final output file is stored in the output path that you set. In GPrimer, the output file is written by CPU threads in Step 5 and then it is sorted after being gathered as one file. The format of output file is shown in the below.
  
 The example of output file:
