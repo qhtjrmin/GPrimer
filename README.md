@@ -11,6 +11,14 @@ $ ./build.sh
 ```
 The source codes are in "src" folder. 
 
+## Environment
+GPrimer needs the following softwares to be installed in the system:
+
+- CUDA toolkit version 8 or higher.
+- Nvidia driver (v384 or higher)
+
+
+
 # 2. Running
 ## 2.1. Prepare input sequence data
  The input DBs that can be used are in “input_sequence” folder. If you want to take your own sequence as the input, then use it. The format of input should be ‘sid(\t)sequence’. 
