@@ -3,7 +3,6 @@ GPrimer: a fast GPU-based pipeline for primerdesign for qPCR experiments
 
 # 1. Get GPrimer
 To get and compline GPrimer, follow the quires that listed below
-- The queries for getting GPrimer are listed as follows :
 ```
 $ git clone  https://github.com/qhtjrmin/GPrimer.git
 $ cd src
