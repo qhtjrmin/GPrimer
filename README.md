@@ -56,11 +56,11 @@ $ ./gprimer –i ./input_sequence/s_scrofa_refseq_181107.txt –o ./inter/output
  
 - The example command for using 4 GPUs:
 ```
-$ ./gprimer –i ./input_sequence/s_scrofa_refseq_181107.txt –o ./inter/output.txt –d ./inter/ -g 4
+$ ./gprimer –i ../input_sequence/s_scrofa_refseq_181107.txt –o ./inter/output.txt –d ./inter/ -g 4
 ```
 - The example command for using 8 GPUs:
 ```
-$ ./gprimer –i ./input_sequence/s_scrofa_refseq_181107.txt –o ./inter/output.txt –d ./inter/ -g 8
+$ ./gprimer –i ../input_sequence/s_scrofa_refseq_181107.txt –o ./inter/output.txt –d ./inter/ -g 8
 ```
 
 # 3. The parameters for filtering in GPrimer
@@ -82,7 +82,7 @@ If you want to change the parameters, set the option -p1 as 1. Then, you can ent
 
 The example command for setting your own single filtering parameters:
 ```
-$ ./gprimer -i ./input_sequence/s_scrofa_refseq_181107.txt -o ./inter/output.txt -d ./inter/ -p1 1
+$ ./gprimer -i ../input_sequence/s_scrofa_refseq_181107.txt -o ./inter/output.txt -d ./inter/ -p1 1
 ```
 
 ## 3.2. The parameters about pair filtering
@@ -100,7 +100,7 @@ If you want to change the parameters for pair filtering, set the option –p2 as
 
 The example command for setting your own single filtering parameters:
 ```
-$ ./gprimer -i ./input_sequence/s_scrofa_refseq_181107.txt -o ./inter/output.txt -d ./inter/ -p2 1
+$ ./gprimer -i ../input_sequence/s_scrofa_refseq_181107.txt -o ./inter/output.txt -d ./inter/ -p2 1
 ```
 
 ## 4. The format of output file
