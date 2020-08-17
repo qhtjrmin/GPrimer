@@ -9,7 +9,7 @@ $ cd GPrimer/src
 $ chmod +x build.sh
 $ ./build.sh
 ```
-The source codes are in "src" folder. 
+The source codes are in "src" folder. You can directly use the binary file in 'execution_file' folder for execution of GPrimer without compilation.
 
 ## Environment
 GPrimer needs the following softwares to be installed in the system:
