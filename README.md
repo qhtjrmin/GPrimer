@@ -5,7 +5,7 @@ GPrimer: a fast GPU-based pipeline for primerdesign for qPCR experiments
 To get and compline GPrimer, follow the quires that listed below
 ```
 $ git clone https://github.com/qhtjrmin/GPrimer.git
-$ cd src
+$ cd GPrimer/src
 $ chmod +x build.sh
 $ ./build.sh
 ```
@@ -16,8 +16,7 @@ GPrimer needs the following softwares to be installed in the system:
 
 - CUDA toolkit version 8 or higher.
 - Nvidia driver (v384 or higher)
-- GCC/G++ 4.8.x or later
-
+- gcc/g++ 4.8.x or later
 
 
 # 2. Running
