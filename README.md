@@ -12,7 +12,7 @@ $ ./build.sh
 The source codes are in "src" folder. You can directly use the binary file in 'execution_file' folder for execution of GPrimer without compilation.
 
 ## Environment
-GPrimer needs the following softwares to be installed in the system:
+GPrimer needs the following softwares to run in the system:
 
 - CUDA toolkit version 8 or higher.
 - Nvidia driver (v384 or higher)
