@@ -21,7 +21,7 @@ GPrimer needs the following softwares to run in the system:
 
 # 2. Running
 ## 2.1. Prepare input sequence data
- The input DBs that can be used are in “input_sequence” folder. In the case of mouse and human RefSeq data, because the input size is large, the following command should be used to decompress.
+ The input DBs that can be used are in “input_sequence” folder. In the case of mouse and human RefSeq data, they should be decompressed as the following command to use for input sequence DB.
  
  ```
  $ gunzip m_musculus_refseq_181107.txt.gz 
