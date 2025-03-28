@@ -6,14 +6,11 @@ Paper: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-021-0
 To get and compline GPrimer, follow the quires that listed below
 ```
 $ git clone https://github.com/qhtjrmin/GPrimer.git
-$ cd GPrimer/src
-$ chmod +x build.sh
-$ ./build.sh
 ```
-The source codes are in "src" folder. You can directly use the binary file in 'execution_file' folder for execution of GPrimer without compilation.
+You can directly use the binary file in 'execution_file' folder for execution of GPrimer without compilation.
 
 ## Environment
-GPrimer needs the following softwares to run in the system:
+GPrimer needs the following software to run on the system:
 
 - CUDA toolkit version 8 or higher.
 - Nvidia driver (v384 or higher)
